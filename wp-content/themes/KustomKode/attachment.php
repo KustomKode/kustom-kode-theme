@@ -5,7 +5,7 @@
 <h1 class="page-title"><?php the_title(); ?> | <a href="<?php echo get_permalink($post->post_parent) ?>" title="<?php printf( __( 'Return to %s', 'KustomKode' ), esc_html( get_the_title($post->post_parent), 1 ) ) ?>" rev="attachment"><span class="meta-nav">&laquo; </span><?php echo get_the_title($post->post_parent) ?></a></h1>
 <div id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 <?php get_template_part( 'entry', 'meta' ); ?>
-<div class="entry-content">
+<div class="entry-content clearfix">
 <div id="nav-above" class="navigation">
 <div class="nav-previous"><?php previous_image_link( false, sprintf(__( ' %s Previous' , 'KustomKode' ), '&larr;' ) ); ?></div>
 <div class="nav-next"><?php next_image_link( false, sprintf(__( 'Next %s' , 'KustomKode' ), '&rarr;' ) ); ?></div>

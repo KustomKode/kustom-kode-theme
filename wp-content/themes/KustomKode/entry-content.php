@@ -1,4 +1,4 @@
-<div class="entry-content">
+<div class="entry-content clearfix">
 <?php if ( has_post_thumbnail() ) {
     the_post_thumbnail();
 } ?>

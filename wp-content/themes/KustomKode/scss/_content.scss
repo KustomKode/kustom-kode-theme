@@ -91,10 +91,27 @@ h1.entry-title{
         }
     }
 }
-.phnone,.alignnone{
-	width:auto;
-	height:auto;
-	margin:20px auto;
+
+.contact-content,.contactform{
+	@include bbox;
+	float:left;
+	width:50%;
+	padding-right:20px;
+	display:block;
+	margin:0 0 25px 0;
+    @media screen and (max-width:767px){
+		width:100%;
+		padding:0;
+	}
+}
+
+.contactform{
+    padding-right:0;
+	padding-left:20px;
+    @media screen and (max-width:767px){
+	    margin-bottom:0;
+		padding:0;
+	}
 }
 
 .wp-block-image.aligncenter{
