@@ -89,7 +89,7 @@ a.nav-toggle{
 				li{
 					float:none;
 					clear:both;
-					border-bottom:1px solid $charcoal;
+					border-bottom:$subnavborder;
 					padding:0;
 					&:last-of-type{
 						border:0;
