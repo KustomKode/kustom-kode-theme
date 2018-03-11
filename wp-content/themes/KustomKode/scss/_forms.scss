@@ -1,0 +1,242 @@
+.form{
+	@include bbox;
+	form{
+        display:block;
+        position:relative;
+        width:100%;
+        margin:0;
+        padding:0;
+        @include bbox;
+	}
+	p{
+		clear:both;
+		margin:0;
+		padding:0;
+	}
+	label{
+		@include bbox;
+		display:block;
+		font-size:13px;
+		padding:0 0 0 1px;
+		margin:0 0 4px;
+		line-height:18px;
+		color:$black;
+		float:left;
+	}
+	input,textarea{
+		appearance:none;
+		-webkit-appearance:none;
+        display:block;
+        position:relative;
+        width:100%;
+		border:1px solid $formbordercolor;
+        float:left;
+        clear:both;
+        z-index:2;
+		padding:0 5px;
+		margin:0 0 10px;
+		@include bbox;
+		line-height:30px;
+		height:32px;
+		overflow:hidden;
+		resize:none;
+		font-size:16px;
+		font-family:inherit;
+		background:$white;
+        &:focus{
+            outline:none;
+            background:$white;
+		}
+        &.req{
+            margin:0;
+            padding-right:20px;
+        }
+		&.submit{
+            width:auto;
+            height:auto;
+            cursor:pointer;
+            float:right;
+            border:0;
+            color:$submitfont;
+            background-color:$submit;
+            font-size:17px;
+            line-height:36px;
+            padding:5px 15px;
+			margin-top:10px;
+			font-weight:bold;
+			@include trans(background-color,0.2);
+            &:hover{
+                background-color:$submithover;
+            }
+            &:focus{
+				outline:none;
+                background-color:$submithover;
+            }
+		}
+	}
+	textarea{
+        height:auto;
+        max-height:120px;
+	}
+	.requiredinput{
+		@include bbox;
+		float:left;
+		margin:0 0 10px;
+		width:100%;
+		&::after{
+            color:$red2;
+            content:'*';
+            position:absolute;
+            display:inline-block;
+            right:4px;
+            top:4px;
+            font-weight:bold;
+            z-index:3;
+            font-size:18px;
+            line-height:1;
+		}
+		input{
+            margin-bottom:0;
+		}
+	}
+    .security{
+        float:left;
+        padding:0 0 0 87px;
+		width:100%;
+        @include bbox;
+		img.wpcf7-captcha-captcha-100{
+            position:absolute;
+			width:78px;
+			height:32px;
+			@include bbox;
+			padding:3px 2px;
+			border:1px solid $formbordercolor;
+			background:$white;
+			top:0;
+			left:0;
+		}
+    }
+	span.wpcf7-not-valid-tip{
+        display:block;
+        position:relative;
+        background:$errorred;
+        color:$red;
+        width:100%;
+        height:auto;
+        @include bbox;
+        padding:7px 8px 7px 30px;
+        font-size:12px;
+        line-height:14px;
+        float:left;
+        clear:both;
+        margin:10px 0 0;
+        &::before{
+            display:inline-block;
+            position:absolute;
+            width:16px;
+			height:15px;
+            left:8px;
+            top:6px;
+            background:url(/wp-content/uploads/error.svg) center/cover no-repeat;
+			content:"";
+            z-index:1;
+        }
+        &::after{
+            display:block;
+            position:absolute;
+            content:'';
+            top:-5px;
+            left:9px;
+            width:12px;
+            height:12px;
+            background:$errorred;
+            -webkit-transform:rotate(-45deg);
+            -moz-transform:rotate(-45deg);
+            -ms-transform:rotate(-45deg);
+            -o-transform:rotate(-45deg);
+            transform:rotate(-45deg);
+            z-index:0;
+        }
+	}
+    .wpcf7-validation-errors{
+        display:block;
+        position:relative;
+		@include bbox;
+        background:$warningyellow;
+        color:$warningyellowdark;
+        width:100%;
+        height:auto;
+        padding:10px 10px 10px 31px;
+        font-size:13px;
+        line-height:18px;
+        float:left;
+        clear:both;
+        margin:10px 0 0;
+        border:0;
+        &::before{
+            display:inline-block;
+            position:absolute;
+            width:16px;
+			height:15px;
+            left:8px;
+            top:11px;
+            background:url(/wp-content/uploads/error.svg) center/cover no-repeat;
+			content:"";
+            z-index:1;
+			color:$errorred;
+		}
+	}
+    .wpcf7-mail-sent-ok{
+        display:block;
+        position:relative;
+		@include bbox;
+        background:green;
+        color:#fff;
+        width:100%;
+        height:auto;
+        padding:10px 10px 10px 31px;
+        font-size:13px;
+        line-height:18px;
+        float:left;
+        clear:both;
+        margin:20px 0 0;
+        border:0;
+        &::before{
+            display:inline-block;
+            position:absolute;
+            width:16px;
+			height:16px;
+            left:10px;
+            top:11px;
+            background:url(/wp-content/uploads/ok.svg) center/cover no-repeat;
+			content:"";
+            z-index:1;
+		}
+	}
+}
+
+button.submit{
+	        background:none;
+            appearance:none;
+	        -webkit-appearance:none;
+            width:auto;
+            height:auto;
+            cursor:pointer;
+            float:right;
+            border:0;
+            color:$submitfont;
+            background-color:$submit;
+            font-size:17px;
+            line-height:36px;
+            padding:5px 15px;
+			margin-top:10px;
+			font-weight:bold;
+			@include trans(background-color,0.2);
+            &:hover{
+                background-color:$submithover;
+            }
+            &:focus{
+				outline:none;
+                background-color:$submithover;
+            }
+}

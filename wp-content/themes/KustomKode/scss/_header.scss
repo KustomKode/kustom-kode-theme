@@ -1,0 +1,28 @@
+header{
+    padding:10px 0;
+}
+a.logo{
+    display:block;
+	float:left;
+	width:auto;
+	height:auto;
+	img{
+        width:100%;
+		height:auto;
+	}
+}
+.ph{
+	width:auto;
+	float:right;
+	font-size:24px;
+	line-height:32px;
+	color:$phonefont;
+	font-weight:700;
+	a{
+		text-decoration:none;
+		color:$phonefont;
+		&:hover{
+			text-decoration:underline;
+		}
+	}
+}

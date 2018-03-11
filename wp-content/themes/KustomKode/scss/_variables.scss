@@ -1,0 +1,153 @@
+// *************************************** VARIABLES *************************************** //
+// Colors //
+$white:#fff;
+$black:#000;
+$charcoal:#111;
+$gray:#ededed;
+$gray2:#ddd;
+$gray3:#777;
+$blue:#2f99ce;
+$blue2:#1576d6;
+$blue3:#105399;
+$blue4:#00263d;
+$blue5:#004665;
+$green:#42af29;
+$green2:#229822;
+$orange:#f88f1f;
+$red:#f00;
+$red2:#900;
+$errorred:#ff9494;
+$warningyellow:#fff695;
+$warningyellowdark:#9f6000;
+
+// Element Colors //
+$topbarbg:$blue;
+$topbarfont:$white;
+$headerbg:$white;
+$phonefont:$black;
+$navbg:$red2;
+$navfont:$white;
+$navbghover:$black;
+$navfonthover:$white;
+$subnavbg:$red2;
+$subnavbghover:$black;
+$subnavfont:$white;
+$subnavfonthover:$white;
+$h1color:$black;
+$formbordercolor:#d3d3d3;
+$submitfont:$white;
+$submit:$red2;
+$submithover:$red;
+$footerbg:#151515;
+$copybg:#050505;
+
+
+
+
+
+
+
+
+
+
+
+
+// **************************************** MIXINS ***************************************** //
+
+@mixin bbox(){
+    -webkit-box-sizing:border-box;
+    -moz-box-sizing:border-box;
+    box-sizing:border-box;
+}
+
+@mixin trans($element, $speed){
+    -webkit-transition:$element $speed +s ease-in-out;
+    -moz-transition:$element $speed +s ease-in-out;
+    -o-transition:$element $speed +s ease-in-out;
+    -ms-transition:$element $speed +s ease-in-out;
+    transition:$element $speed +s ease-in-out;
+}
+
+@mixin radius($radius){
+    -webkit-border-radius:$radius;
+    -moz-border-radius:$radius;
+    -ms-border-radius:$radius;
+    border-radius:$radius;
+}
+
+@mixin shadow($a, $b, $c, $d, $color){
+    -webkit-box-shadow:$a $b $c $d $color;
+    -moz-box-shadow:$a $b $c $d $color;
+    box-shadow:$a $b $c $d $color;
+}
+
+
+@mixin h1fontsize(){
+    font-size:30px;
+	line-height:38px;
+    font-weight:700;
+	@media screen and (max-width:1440px){
+    	font-size:28px;
+		line-height:36px;
+	}
+	@media screen and (max-width:960px){
+    	font-size:26px;
+		line-height:34px;
+	}
+}
+
+@mixin h2fontsize(){
+    font-size:28px;
+	line-height:34px;
+    font-weight:700;
+	@media screen and (max-width:1440px){
+    	font-size:24px;
+		line-height:32px;
+	}
+	@media screen and (max-width:960px){
+    	font-size:22px;
+		line-height:30px;
+	}
+}
+
+@mixin h3fontsize(){
+    font-size:24px;
+	line-height:32px;
+    font-weight:700;
+	@media screen and (max-width:1440px){
+    	font-size:22px;
+		line-height:30px;
+	}
+	@media screen and (max-width:960px){
+    	font-size:20px;
+		line-height:28px;
+	}
+}
+
+@mixin h4fontsize(){
+    font-size:22px;
+	line-height:30px;
+    font-weight:700;
+	@media screen and (max-width:1440px){
+    	font-size:20px;
+		line-height:28px;
+	}
+	@media screen and (max-width:960px){
+    	font-size:18px;
+		line-height:26px;
+	}
+}
+
+@mixin h5fontsize(){
+    font-size:18px;
+	line-height:26px;
+    font-weight:700;
+	@media screen and (max-width:1440px){
+    	font-size:17px;
+		line-height:25px;
+	}
+	@media screen and (max-width:960px){
+    	font-size:16px;
+		line-height:24px;
+	}
+}

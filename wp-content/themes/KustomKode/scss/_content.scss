@@ -1,0 +1,147 @@
+.sitecontent{
+	margin:20px 0;
+    @include bbox;
+    @include trans(all,0.2);
+	line-height:24px;
+    &.left{
+        float:left;
+        width:70%;
+        margin-right:2%;
+        @media screen and (max-width:960px){
+			width:100%;
+			float:none;
+            margin:20px 0;
+        }
+    }
+    &.right{
+        float:right;
+        width:70%;
+        margin-left:2%;
+        @media screen and (max-width:960px){
+			width:100%;
+			float:none;
+            margin:20px 0;
+        }
+    }
+}
+
+h1.entry-title{
+    position:relative;
+    display:block;
+	@include h1fontsize;
+    margin:0 0 15px;
+	color:$h1color;
+}
+
+.entry-content{
+    h2,h3,h4,h5,h6{
+        position:relative;
+        display:block;
+        color:inherit;
+        @include trans(all,0.2);
+	}
+    h2{
+        @include h2fontsize;
+    }
+    h3{
+        @include h3fontsize;
+        padding-bottom:4px;
+    }
+    h4{
+        @include h4fontsize;
+    }
+    h5{
+        @include h5fontsize;
+    }
+	a{
+        color:$blue;
+        text-decoration:underline;
+		&:hover,&:active{
+            text-decoration:none;
+        }
+    }
+	p{
+	    padding:0 0 20px 0;
+	}
+    ul,ol{
+        display:block;
+        position:relative;
+        margin:5px 0 9px 30px;
+        padding:0;
+		li{
+            padding:0 0 6px 0;
+        }
+		&.doubleul{
+            margin-right:30px;
+            float:left;
+            @media screen and (max-width:650px){
+                margin-bottom:0;
+                float:none;
+                clear:both;
+			}
+        }
+		&.doubleul2{
+            float:left;
+            margin-right:0;
+            @media screen and (max-width:650px){
+                margin-top:0;
+                float:none;
+                clear:both;
+            }
+        }
+    }
+}
+
+.phnone,.alignnone{
+	width:auto;
+	height:auto;
+	margin:20px auto;
+}
+
+.phright,.alignright{
+    float:right;
+    margin:0 0 20px 20px;
+    width:auto;
+    height:auto;
+	@include trans(all,0.2);
+    @media screen and (max-width:768px){
+        max-width:280px;	
+	}
+    @media screen and (max-width:736px){
+        max-width:250px;	
+	}
+    @media screen and (max-width:480px){
+        max-width:230px;	
+	}
+    @media screen and (max-width:479px){
+        width:auto;
+        float:none;
+        margin:20px auto;
+        max-width:100%;
+        @include bbox;
+	}
+}
+
+.phleft,.alignleft{
+    float:left;
+    margin:20px 20px 20px 0;
+    width:auto;
+    height:auto;
+	@include trans(all,0.2);
+    @media screen and (max-width:768px){
+        max-width:280px;	
+	}
+    @media screen and (max-width:736px){
+        max-width:250px;	
+	}
+    @media screen and (max-width:480px){
+        max-width:230px;	
+	}
+    @media screen and (max-width:479px){
+        width:auto;
+        float:none;
+        margin:20px auto;
+        max-width:100%;
+        @include bbox;
+	}
+}
