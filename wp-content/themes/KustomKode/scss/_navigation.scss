@@ -1,34 +1,5 @@
 a.nav-toggle{
     display:none;
-    text-transform:uppercase;
-    margin:5px 0 0 0;
-    height:40px;
-    color:$black;
-    font-weight:700;
-    line-height:40px;
-    @include bbox;
-    @include trans(all,0.2);
-    float:right;
-    clear:right;
-    z-index:111;
-    &::before{
-        font-family:fontAwesome;
-        font-size:28px;
-        line-height:40px;
-        font-weight:normal;
-        display:block;
-        width:40px;
-        height:40px;
-        text-align:center;
-        margin-right:4px;
-        position:relative;
-        float:left;
-        content:'\f0c9';
-        color:$blue;
-    }
-	&.active::before{
-        content:'\f2d3';
-    }
 }
 
 .navbar{
@@ -44,32 +15,63 @@ a.nav-toggle{
 			position:relative;
 			list-style:none;
 			margin:0;
-			padding:0;
+			padding:0 0 0 1px;
+			@include bbox;
+			&.menu::before{
+				display:block;
+				width:1px;
+				height:26px;
+                background:$white;
+				left:0;
+				top:12px;
+				content:'';
+				position:absolute;
+			}
 			li{
 			    display:block;
 			    position:relative;
 				float:left;
 				margin:0;
-				padding:0;
+				padding:0 1px 0 0;
 				height:auto;
+				@include bbox;
+				&::before{
+				    display:block;
+				    width:1px;
+				    height:26px;
+                    background:$white;
+				    right:0;
+				    top:12px;
+				    content:'';
+				    position:absolute;
+				}
 				&:hover ul{
 					visibility:visible;
 				}
 				a{
+			        -webkit-transition:background 0.1 ease-in-out,color 0.1 ease-in-out;
+			        -moz-transition:background 0.1 ease-in-out,color 0.1 ease-in-out;
+			        -o-transition:background 0.1 ease-in-out,color 0.1 ease-in-out;
+			        -ms-transition:background 0.1 ease-in-out,color 0.1 ease-in-out;
+			        transition:background 0.1 ease-in-out,color 0.1 ease-in-out;
 			        display:block;
 			        position:relative;
 				    margin:0;
-				    padding:13px 20px;
+				    padding:13px 25px;
 					font-size:16px;
 					line-height:24px;
-					font-weight:700;
+					font-weight: bold;
 					text-decoration:none;
 					@include bbox;
 					color:$navfont;
+					@media screen and (max-width:1200px){
+					    padding:13px 20px;	
+					}
 					&:hover,&:focus{
 						color:$navfonthover;
 		                background:$navbghover;
 					}
+					
 				}
 			}
 			ul{
@@ -87,12 +89,23 @@ a.nav-toggle{
 				li{
 					float:none;
 					clear:both;
-					border-bottom:1px solid $white;
+					border-bottom:1px solid $charcoal;
+					padding:0;
+					&:last-of-type{
+						border:0;
+					}
+					&::before{
+					    display:none;	
+					}
 					a{
-						padding:8px 10px 8px 20px;
+						padding:8px 10px 8px 25px;
 						line-height:26px;
 						color:$subnavfont;
-						font-size:14px;
+						font-size:16px;
+						background:transparent;
+					    @media screen and (max-width:1200px){
+					        padding-left:20px;	
+					    }
 					    &:hover,&:focus{
 						    color:$subnavfonthover;
 		                    background:$subnavbghover;
@@ -109,5 +122,123 @@ a.nav-toggle{
             max-width:1240px;
             padding:0 20px;
 	    }
+		@media screen and (max-width:1040px){
+            padding:0;
+	    }
 	}
+}
+
+@media screen and (max-width:1040px){
+	.navbar{
+		padding:0;
+	}
+	nav.closed{
+		display:none;
+	}
+	a.nav-toggle{
+		display:block;
+		@include bbox;
+		width:44px;
+		height:50px;
+		margin:0 14px 0 0;
+		padding:24px 6px 23px;
+		text-decoration:none;
+		float:right;
+		cursor:pointer;
+		&:focus{
+			text-decoration:none;
+			outline:none;
+		}
+		span{
+			display:block;
+			width:100%;
+			height:3px;
+			background:$navfont;
+			position:relative;
+			&::before,&::after{
+			    display:block;
+				position:absolute;
+				content:'';
+			    width:100%;
+			    height:3px;
+			    background:$navfont;
+				top:-8px;
+				@include trans(all,0.2);
+			}
+			&::after{
+				top:auto;
+				bottom:-8px;
+			}
+		}
+	}
+	.nav-is-open a.nav-toggle span{
+		background:$navbg;
+		&::before{
+			width:30px;
+			height:4px;
+			-webkit-transform:rotate(-48deg);
+			-moz-transform:rotate(-48deg);
+			transform:rotate(-48deg);
+			top:auto;
+		}
+		&::after{
+			width:30px;
+			height:4px;
+			-webkit-transform:rotate(48deg);
+			-moz-transform:rotate(48deg);
+			transform:rotate(48deg);
+			bottom:auto;
+		}
+	}
+	nav.opened{
+		display:block;
+		position:relative;
+		ul,ul ul{
+			display:block;
+			position:relative;
+			width:100%;
+			margin:0;
+			padding:0;
+			top:auto;
+			left:auto;
+			visibility:visible;
+			background:none;
+			&::before{
+				display:none !important;
+			}
+			li{
+				display:block;
+				width:100%;
+				margin:0;
+				padding:0;
+				border:0;
+			    &::before{
+				    display:none !important;
+			    }
+				a{
+					display:block;
+					@include bbox;
+					margin:0;
+					padding:8px 10px 8px 20px;
+					font-size:16px;
+					font-weight:bold;
+					line-height:27px;
+					border-top:1px solid $mobilenavitemborder;
+					background:$mobilenavbg;
+					color:$mobilenavfont !important;
+					&:hover{
+						background:$mobilenavbghover;
+						color:$mobilenavfonthover !important;
+					}
+				}
+			}
+		}
+		ul ul a{
+			text-indent:15px;
+		}
+		ul ul a::before{
+			content:'- ';
+		}
+	}
+	
 }

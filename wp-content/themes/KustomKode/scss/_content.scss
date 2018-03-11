@@ -91,57 +91,64 @@ h1.entry-title{
         }
     }
 }
-
 .phnone,.alignnone{
 	width:auto;
 	height:auto;
 	margin:20px auto;
 }
 
-.phright,.alignright{
+.wp-block-image.aligncenter{
+	img{
+		margin:20px auto;		
+	}
+}
+
+.wp-block-image.alignright{
     float:right;
     margin:0 0 20px 20px;
     width:auto;
     height:auto;
 	@include trans(all,0.2);
+	max-width:100% !important;
     @media screen and (max-width:768px){
-        max-width:280px;	
+        max-width:280px !important;
 	}
     @media screen and (max-width:736px){
-        max-width:250px;	
+        max-width:250px !important;
 	}
     @media screen and (max-width:480px){
-        max-width:230px;	
+        max-width:230px !important;	
 	}
     @media screen and (max-width:479px){
         width:auto;
         float:none;
         margin:20px auto;
-        max-width:100%;
+        max-width:100% !important;
         @include bbox;
 	}
 }
 
-.phleft,.alignleft{
+.wp-block-image.alignleft{
     float:left;
     margin:20px 20px 20px 0;
     width:auto;
     height:auto;
 	@include trans(all,0.2);
+	max-width:100% !important;
     @media screen and (max-width:768px){
-        max-width:280px;	
+        max-width:280px !important;	
 	}
     @media screen and (max-width:736px){
-        max-width:250px;	
+        max-width:250px !important;	
 	}
     @media screen and (max-width:480px){
-        max-width:230px;	
+        max-width:230px !important;
 	}
     @media screen and (max-width:479px){
         width:auto;
         float:none;
         margin:20px auto;
-        max-width:100%;
+        max-width:100% !important;
         @include bbox;
 	}
 }
