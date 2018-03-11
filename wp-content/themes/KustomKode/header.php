@@ -30,7 +30,7 @@
 <header>
     <div class="inner clearfix">
         <a class="logo" href="<?php echo get_home_url(); ?>" title="Home">
-            <img width="281" height="57" src="/kustom-kode-theme/wp-content/uploads/logo.svg" alt="<?php echo do_shortcode('[company-name]'); ?>" />
+            <img width="281" height="57" src="<?php echo home_url('wp-content/uploads/logo.svg'); ?>" alt="<?php echo do_shortcode('[company-name]'); ?>" />
         </a>
         <?php
             if(get_option('company_phone')){ ?>
